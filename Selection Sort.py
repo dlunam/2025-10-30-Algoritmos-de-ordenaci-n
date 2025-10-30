@@ -1,4 +1,5 @@
-#Selection Sort 
+import random
+import timeit
 
 def selection_sort(my_array):
     n = len(my_array)
@@ -10,21 +11,3 @@ def selection_sort(my_array):
         min_value = my_array.pop(min_index)
         my_array.insert(i, min_value)
     return my_array
-
-
-
-#Segunda parte
-
-import random, time
-
-for n in [1000, 10000, 100000]:
-    datos = [random.randint(0, n) for _ in range(n)]
-    inicio = time.time()
-    merge_sort(datos)
-    t_merge = time.time() - inicio
-
-    inicio = time.time()
-    quick_sort(datos)
-    t_quick = time.time() - inicio
-
-    print(f"N={n}: MergeSort={t_merge:.4f}s, QuickSort={t_quick:.4f}s")
