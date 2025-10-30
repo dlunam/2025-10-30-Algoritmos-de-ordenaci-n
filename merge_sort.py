@@ -1,4 +1,5 @@
 import timeit
+import random 
 
 def merge_sort(arr):
     if len(arr) > 1:
@@ -33,9 +34,10 @@ def merge_sort(arr):
 
     return arr
 
-
-stmt = "merge_sort([5, 2, 9, 1, 5, 6])"
+random_list = [random.randint(1, 1000) for _ in range(100)]
+stmt = "merge_sort(random_list)"
 setup = "from __main__ import merge_sort"
 
 execution_time = timeit.timeit(stmt, setup=setup, number=4)
 print(f"Execution time: {execution_time} seconds")
+
